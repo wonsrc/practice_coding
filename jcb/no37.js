@@ -4,7 +4,12 @@ let win = "";
 
 for(let i in arr) {
     let key = arr[i];
-    res[key] = res[key] === undefined ? 1 : res[key] = res[key] + 1;
+    // res[key] = res[key] === undefined ? 1 : res[key] = res[key] + 1;
+    if(res[key] === undefined) {
+        res[key] = 1;
+    } else {
+        res[key]++;
+    }
 }
 
 win = Object.keys(res).reduce(function(a, b) {
