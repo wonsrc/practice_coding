@@ -12,3 +12,23 @@ for(let i = 0; i < arr.length; i++) {
         arr[i+1] = tmp;
     }
 }
+
+/* =============================================== */
+
+function solution(arr1) {
+    let answer = arr1;
+
+    for(let i = 0; i < arr1.length-1; i++) {
+        for(let j = 0; j <arr1.length-i-1; j++) {
+            if(arr1[j] > 0 && arr1[j+1] < 0) {
+                [arr1[j], arr1[j+1]] = [arr1[j+1], arr1[j]];
+            }
+        }
+    }
+
+    return answer;
+}
+
+let arr1 = [1, 2, 3, -3, -2, 5, 6, -6];
+console.log(arr1);
+console.log(solution(arr1));

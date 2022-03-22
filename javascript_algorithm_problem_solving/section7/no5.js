@@ -1,18 +1,50 @@
-function solution(s, n) {
-    // let lru = new Array(s).fill(0);
-    let lru = [];
+// function solution(size, arr) {
+//     let answer = Array.from({length:size}, () => 0);
 
-    for(let i = 0; i < n.length; i++) {
-            if(lru.includes(n[i] === false)) {
-                lru.unshift(n[i]);
-                break;
-            } else {
-                lru.unshift(n[i]);
-                lru[lru.indexOf(n[i])] = 0;
-            }
-    }
+//     arr.forEach(x => {
+//         let pos = -1;
+//         for(let i = 0; i < size; i++) if(x === answer[i]) pos = i;
+//         if(pos === -1) {
+//             for(let i = size-1; i >=1; i--) {
+//                 answer[i] = answer[i-1];
+//                 }
+//         } else {
+//             for(let i = pos; i >=1; i--) {
+//                 answer[i] = answer[i-1];
+//             }
+//         }
+//         answer[0] = x;
+//     });
 
-    return lru;
+//     return answer;
+// }
+
+// let size = 5;
+// let arr = [1,2,3,2,6,2,3,5,7];
+// console.log(solution(size, arr));
+
+/* ==================================================== */
+
+function solution(size, arr) {
+    let answer = Array.from({length:size}, () => 0);
+
+    arr.forEach(x => {
+        let pos = -1;
+        for(let i = 0; i < size; i++) if(x === answer[i]) pos = i;
+        if(pos === -1) {
+            answer.unshift(x);
+            if(answer.length>size) answer.pop();
+            
+        } else {
+            answer.splice(pos,1);
+            answer.unshift(x);
+        }
+    });
+
+    return answer;
 }
 
-console.log(solution(5,[1,2,3,2,6,2,3,5,7]));
+let size = 5;
+let arr = [1,2,3,2,6,2,3,5,7];
+console.log(solution(size, arr));
+
