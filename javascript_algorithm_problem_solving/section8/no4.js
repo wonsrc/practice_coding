@@ -10,7 +10,7 @@ function solution(n) {
                     tmp += i + ' ';
                 }
             }
-            answer.push(tmp);
+            if(tmp.length>0) answer.push(tmp.trim());
         } else {
             ch[v] = 1;
             DFS(v+1);
