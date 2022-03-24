@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        const nationWidth = {
+const nationWidth = {
     'korea': 220877,
     'Rusia': 17098242,
     'China': 9596961,
@@ -38,6 +28,3 @@
     }
 
     console.log(item[0], item[1] - w);
-    </script>
-</body>
-</html>
