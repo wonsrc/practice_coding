@@ -1,23 +1,22 @@
-function solution(numbers, target) {
-
-    let answer = 0;
-    dfs(0, 0);
-    return answer;
+function solution(arr) {
+  let answer = [];
   
-    function dfs(cnt, sum) {
-  
-      if(cnt === numbers.length) {
-        if(sum === target) {
-          answer++;
-        }
-        return;
-      }
-  
-      dfs(cnt + 1, sum + numbers[cnt]);
-      dfs(cnt + 1, sum - numbers[cnt]);
+  function dfs(level, sum) {
+    if(level === arr.length) {
+        answer.push(sum);
+    } else {
+      // O
+      dfs(level+1, sum + arr[level]);
+      // X
+      dfs(level+1, sum);
     }
-  
   }
-  
-  console.log(solution([4, 1, 2, 1],2));
-  console.log(solution([1, 1, 1, 1, 1],3));
+
+  dfs(0, 0);
+  return answer;
+}
+
+// let arr = [1, 3, 5, 6, 7, 10];
+let arr = [1, 3, 6];
+
+console.log(solution(arr));
