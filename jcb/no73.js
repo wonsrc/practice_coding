@@ -1,0 +1,18 @@
+let graph = 
+    {'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F'],
+    'D': ['B'],
+    'E': ['B', 'F'],
+    'F': ['C', 'E']};
+
+function solution(graph, start, end) {
+    let stack = [];
+    let way = [];
+
+
+}
+
+console.log(solution(graph, 'A', 'F'));
+
+console.log(graph['A']);
